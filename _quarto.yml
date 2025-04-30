@@ -8,8 +8,8 @@ website:
     left:
       - text: About
         href: index.qmd
-      - text: Visualizations
-        href: visualizations.qmd
+      - text: EDA
+        href: eda.qmd     # ← updated name
       - text: ML Analysis
         href: ml.qmd
 

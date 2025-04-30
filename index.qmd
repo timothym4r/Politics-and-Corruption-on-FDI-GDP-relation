@@ -10,3 +10,10 @@ This project explores how the impact of Foreign Direct Investment (FDI) on GDP g
 Key findings suggest that FDI has a stronger growth-enhancing effect in politically unstable environments, while the moderating role of corruption is less consistent. The project highlights how governance context influences FDI effectiveness and offers actionable insights for policymakers and international investors seeking to foster sustainable economic development.
 
 [📄 Download the full report](JSC370_Final.pdf)
+
+### Mean FDI and GDP Growth Over Time
+
+<iframe src="figures/fdi_gdp_over_time.html" width="100%" height="500px"></iframe>
+
+*Figure: Mean FDI and GDP growth from 2000 to 2023. Both metrics moved in tandem before the 2008 financial crisis. Notably, GDP growth shows greater volatility — especially during the 2008 and 2020 crises — while FDI remained more stable.*
+

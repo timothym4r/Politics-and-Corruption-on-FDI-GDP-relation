@@ -1,0 +1,60 @@
+---
+title: "Exploratory Data Analysis"
+format: html
+---
+
+## Exploratory Data Analysis
+
+We explored trends and relationships between **FDI (% of GDP)**, **GDP growth (%)**, and governance indicators across countries from **2000 to 2023**.
+
+### Time Trends
+
+The average trends show:
+- **FDI and GDP growth moved together** pre-2008
+- **GDP growth dipped sharply post-2008 and during COVID**, while FDI remained steadier
+- This suggests FDI’s impact on growth may vary across time and economic conditions
+
+### Distribution & Correlation
+
+- **FDI** is right-skewed; **GDP growth** is roughly normal but volatile
+- The **correlation** between FDI and growth is weak overall, but governance indicators like **corruption** and **political stability** are strongly related (≈ 0.74)
+- This supports the idea that governance may moderate FDI's effectiveness
+
+### Interaction Patterns
+
+Stratified plots suggest:
+- FDI has a **stronger positive effect on growth** in **less corrupt** and **more stable** countries
+- In unstable or highly corrupt settings, FDI’s growth effect appears weaker
+
+### Takeaway
+
+EDA shows that **FDI’s impact on growth is context-dependent** — and governance quality plays a key moderating role. These patterns guided the regression and ML modeling that followed.
+
+---
+
+## EDA Plots {.tabset}
+
+### Correlation Heatmap
+
+<iframe src="figures/correlation_heatmap.html" width="100%" height="600px"></iframe>
+
+*Figure: Correlation matrix of macroeconomic and governance indicators. FDI and GDP growth show weak correlation (≈ 0.13), while corruption and political stability are strongly correlated (≈ 0.73), suggesting governance indicators may co-vary and influence economic outcomes.*
+
+### FDI vs GDP Growth (No Interaction)
+
+<iframe src="figures/fdi_vs_gdp.html" width="100%" height="500px"></iframe>
+
+*Figure: Scatter plot of FDI (% of GDP) versus GDP growth (%), with an OLS trendline. A weak positive relationship is observed, but the wide spread suggests that other contextual factors likely influence the effect of FDI on growth.*
+
+### FDI vs GDP Growth by Political Stability
+
+<iframe src="figures/fdi_vs_growth_by_stability.html" width="100%" height="500px"></iframe>
+
+*Figure: Scatter plot with trendlines showing how the effect of FDI on GDP growth varies by political stability level. Countries with higher political stability tend to exhibit a stronger and more consistent positive relationship between FDI and GDP growth.*
+
+### FDI vs GDP Growth by Corruption Level
+
+<iframe src="figures/fdi_vs_growth_by_corruption.html" width="100%" height="500px"></iframe>
+
+*Figure: Scatter plot with trendlines showing how the relationship between FDI and GDP growth varies by corruption level. The effect of FDI on growth appears stronger in countries with lower corruption, suggesting a moderating role of governance quality.*
+

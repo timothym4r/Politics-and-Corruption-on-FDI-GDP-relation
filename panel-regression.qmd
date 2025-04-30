@@ -1,0 +1,10 @@
+---
+title: "Panel Regression Table"
+format: html
+---
+
+## Full Panel Regression Output
+
+Below is the full coefficient table, including fixed effects for countries.
+
+<iframe src="figures/panel_regression_table.html" width="100%" height="600px"></iframe>

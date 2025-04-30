@@ -1,0 +1,21 @@
+---
+title: "XGBoost Model Details"
+format: html
+---
+
+## XGBoost Hyperparameters
+
+Below is a summary of the hyperparameter settings used in the final XGBoost model.
+
+<iframe src="figures/xgboost_hyperparams.html" width="100%" height="400px"></iframe>
+
+---
+
+## SHAP Interpretation
+
+We used SHAP (SHapley Additive Explanations) to interpret the contribution of each feature.
+
+- SHAP summary plots show the relative influence of each predictor.
+- Interaction plots visualize how governance metrics moderate FDI’s effect.
+
+You can explore the visualizations [here](ml.qmd).

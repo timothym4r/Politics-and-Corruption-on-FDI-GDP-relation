@@ -9,6 +9,18 @@ To complement our statistical analysis, we applied **XGBoost** (eXtreme Gradient
 
 Unlike the panel regression model, which assumes linear relationships and focuses on statistical significance, XGBoost allowed us to uncover **nonlinear effects** and **interactions** between FDI and governance indicators that may not be easily captured through regression alone.
 
+### Panel Regression Coefficients
+
+We estimated a fixed-effects model with interactions between FDI and governance indicators.
+
+[📊 View Full Regression Table](panel-regression.qmd)
+
+### XGBoost Hyperparameters
+
+We used a tuned XGBoost model to explore nonlinear relationships between FDI and GDP growth.
+
+[⚙️ View XGBoost Details and Hyperparameters](xgboost-details.qmd)
+
 ---
 
 ## Feature Importance and SHAP
@@ -19,7 +31,12 @@ We used **SHAP (SHapley Additive Explanations)** to interpret the XGBoost model.
 - **Unemployment** and **trade balance** were also important predictors, consistent with macroeconomic expectations.
 - Governance scores — **political stability** and **corruption** — had weaker direct effects but contributed meaningfully via interactions.
 
+### SHAP Summary Plot
+
 <iframe src="figures/shap_summary.html" width="100%" height="500px"></iframe>
+
+*Figure: Mean absolute SHAP values showing the relative importance of each predictor in the XGBoost model. FDI (% of GDP) was the most influential feature, followed by unemployment and corruption.*
+
 
 ---
 
@@ -34,6 +51,7 @@ To understand how governance moderates the impact of FDI, we analyzed **SHAP int
 - This suggests that in fragile environments, FDI may compensate for weak domestic investment or governance gaps.
 
 <iframe src="figures/shap_interaction_stability.html" width="100%" height="500px"></iframe>
+*Figure: SHAP values for FDI (% of GDP), colored by political stability score. This plot illustrates how the impact of FDI on GDP growth varies across levels of political stability.*
 
 ### FDI × Corruption
 
@@ -41,6 +59,7 @@ To understand how governance moderates the impact of FDI, we analyzed **SHAP int
 - There was a modest trend suggesting that FDI is **slightly more effective in less corrupt countries**, but the pattern was diffuse and statistically insignificant.
 
 <iframe src="figures/shap_interaction_corruption.html" width="100%" height="500px"></iframe>
+*Figure: SHAP values of FDI colored by corruption score. This plot explores how corruption levels may moderate FDI’s influence on growth.*
 
 ---
 

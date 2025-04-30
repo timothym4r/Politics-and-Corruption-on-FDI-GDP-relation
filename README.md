@@ -3,6 +3,7 @@
 ## 📘 Project Summary
 This project investigates how the economic effect of **Foreign Direct Investment (FDI)** on **GDP growth** varies across countries depending on the quality of governance—specifically, **political stability** and **corruption**. By combining **panel regression** and **interpretable machine learning (XGBoost with SHAP)**, the project reveals how governance moderates the growth impact of FDI over time.
 
+You can view the website here: [https://timothym4r.github.io/Politics-and-Corruption-on-FDI-GDP-relation/](https://timothym4r.github.io/Politics-and-Corruption-on-FDI-GDP-relation/)
 ---
 
 ## 🧩 Dataset Overview

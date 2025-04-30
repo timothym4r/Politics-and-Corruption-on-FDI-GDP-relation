@@ -93,8 +93,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./visualizations.html"> 
-<span class="menu-text">Visualizations</span></a>
+    <a class="nav-link" href="./eda.html"> 
+<span class="menu-text">EDA</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./ml.html" aria-current="page"> 
@@ -116,8 +116,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#machine-learning-approach" id="toc-machine-learning-approach" class="nav-link active" data-scroll-target="#machine-learning-approach">Machine Learning Approach</a></li>
-  <li><a href="#feature-importance-and-shap" id="toc-feature-importance-and-shap" class="nav-link" data-scroll-target="#feature-importance-and-shap">Feature Importance and SHAP</a></li>
+  <li><a href="#machine-learning-approach" id="toc-machine-learning-approach" class="nav-link active" data-scroll-target="#machine-learning-approach">Machine Learning Approach</a>
+  <ul class="collapse">
+  <li><a href="#panel-regression-coefficients" id="toc-panel-regression-coefficients" class="nav-link" data-scroll-target="#panel-regression-coefficients">Panel Regression Coefficients</a></li>
+  <li><a href="#xgboost-hyperparameters" id="toc-xgboost-hyperparameters" class="nav-link" data-scroll-target="#xgboost-hyperparameters">XGBoost Hyperparameters</a></li>
+  </ul></li>
+  <li><a href="#feature-importance-and-shap" id="toc-feature-importance-and-shap" class="nav-link" data-scroll-target="#feature-importance-and-shap">Feature Importance and SHAP</a>
+  <ul class="collapse">
+  <li><a href="#shap-summary-plot" id="toc-shap-summary-plot" class="nav-link" data-scroll-target="#shap-summary-plot">SHAP Summary Plot</a></li>
+  </ul></li>
   <li><a href="#interaction-effects" id="toc-interaction-effects" class="nav-link" data-scroll-target="#interaction-effects">Interaction Effects</a>
   <ul class="collapse">
   <li><a href="#fdi-political-stability" id="toc-fdi-political-stability" class="nav-link" data-scroll-target="#fdi-political-stability">FDI × Political Stability</a></li>
@@ -154,7 +161,17 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="machine-learning-approach">Machine Learning Approach</h2>
 <p>To complement our statistical analysis, we applied <strong>XGBoost</strong> (eXtreme Gradient Boosting), a tree-based ensemble method well-suited for tabular data with complex, nonlinear interactions.</p>
 <p>Unlike the panel regression model, which assumes linear relationships and focuses on statistical significance, XGBoost allowed us to uncover <strong>nonlinear effects</strong> and <strong>interactions</strong> between FDI and governance indicators that may not be easily captured through regression alone.</p>
+<section id="panel-regression-coefficients" class="level3">
+<h3 class="anchored" data-anchor-id="panel-regression-coefficients">Panel Regression Coefficients</h3>
+<p>We estimated a fixed-effects model with interactions between FDI and governance indicators.</p>
+<p><a href="./panel-regression.html">📊 View Full Regression Table</a></p>
+</section>
+<section id="xgboost-hyperparameters" class="level3">
+<h3 class="anchored" data-anchor-id="xgboost-hyperparameters">XGBoost Hyperparameters</h3>
+<p>We used a tuned XGBoost model to explore nonlinear relationships between FDI and GDP growth.</p>
+<p><a href="./xgboost-details.html">⚙️ View XGBoost Details and Hyperparameters</a></p>
 <hr>
+</section>
 </section>
 <section id="feature-importance-and-shap" class="level2">
 <h2 class="anchored" data-anchor-id="feature-importance-and-shap">Feature Importance and SHAP</h2>
@@ -164,9 +181,13 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Unemployment</strong> and <strong>trade balance</strong> were also important predictors, consistent with macroeconomic expectations.</li>
 <li>Governance scores — <strong>political stability</strong> and <strong>corruption</strong> — had weaker direct effects but contributed meaningfully via interactions.</li>
 </ul>
+<section id="shap-summary-plot" class="level3">
+<h3 class="anchored" data-anchor-id="shap-summary-plot">SHAP Summary Plot</h3>
 <iframe src="figures/shap_summary.html" width="100%" height="500px">
 </iframe>
+<p><em>Figure: Mean absolute SHAP values showing the relative importance of each predictor in the XGBoost model. FDI (% of GDP) was the most influential feature, followed by unemployment and corruption.</em></p>
 <hr>
+</section>
 </section>
 <section id="interaction-effects" class="level2">
 <h2 class="anchored" data-anchor-id="interaction-effects">Interaction Effects</h2>
@@ -180,6 +201,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <iframe src="figures/shap_interaction_stability.html" width="100%" height="500px">
 </iframe>
+<p><em>Figure: SHAP values for FDI (% of GDP), colored by political stability score. This plot illustrates how the impact of FDI on GDP growth varies across levels of political stability.</em></p>
 </section>
 <section id="fdi-corruption" class="level3">
 <h3 class="anchored" data-anchor-id="fdi-corruption">FDI × Corruption</h3>
@@ -189,6 +211,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <iframe src="figures/shap_interaction_corruption.html" width="100%" height="500px">
 </iframe>
+<p><em>Figure: SHAP values of FDI colored by corruption score. This plot explores how corruption levels may moderate FDI’s influence on growth.</em></p>
 <hr>
 </section>
 </section>
