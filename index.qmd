@@ -1,0 +1,12 @@
+---
+title: "About"
+format: html
+---
+
+## Project Summary
+
+This project explores how the impact of Foreign Direct Investment (FDI) on GDP growth varies depending on a country’s political stability and corruption levels. Using panel data from 2000 to 2023 across multiple countries, we combine fixed-effects regression and machine learning (XGBoost + SHAP) to uncover interaction effects between FDI and governance quality.
+
+Key findings suggest that FDI has a stronger growth-enhancing effect in politically unstable environments, while the moderating role of corruption is less consistent. The project highlights how governance context influences FDI effectiveness and offers actionable insights for policymakers and international investors seeking to foster sustainable economic development.
+
+[📄 Download the full report](JSC370_Final.pdf)

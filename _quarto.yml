@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: docs     # 👈 this is the key line!
+
+website:
+  title: "FDI Growth Analysis"
+  navbar:
+    left:
+      - text: About
+        href: index.qmd
+      - text: Visualizations
+        href: visualizations.qmd
+      - text: ML Analysis
+        href: ml.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
